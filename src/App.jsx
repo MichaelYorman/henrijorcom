@@ -1,27 +1,22 @@
 import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
-import MainComponent from "./MainComponent";
-import Home from "./Home";
-import About from "./About";
-import Resume from "./Resume";
-import Portfolio from "./Portfolio";
-import GlobalStyle from "./GlobalStyle";
+import Home from "./components/Home";
+import About from "./components/About";
+import Portfolio from "./components/Portfolio";
 
 function App() {
 
   return (
     <>
     <div>
-<Router>
-<GlobalStyle/>
+    <div className="site">
+    <Router>
 <Routes>
-  <Route element={<MainComponent/>}>
     <Route path="/" element={<Home/>} />
     <Route path="about" element={<About/>} />
-    <Route path="resume" element={<Resume/>} />
     <Route path="portfolio" element={<Portfolio/>} />
-  </Route>
 </Routes>
 </Router>
+    </div>
     </div>
     </>
   )

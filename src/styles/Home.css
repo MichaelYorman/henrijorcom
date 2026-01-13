@@ -1,0 +1,37 @@
+.flex-wrapper {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    padding:1rem;
+}
+
+.flex-container {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:50px;  
+}
+
+.card-1,
+.card-2,
+.card-3 {
+    width:500px;
+    height:600px;
+    border-radius:8px;
+}
+.card-1 {
+    background-color: blue;
+}
+.card-2 {
+    background-color: green;
+}
+.card-3 {
+    background-color:red;
+}
