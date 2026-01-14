@@ -1,0 +1,18 @@
+.about-flex-wrapper {
+    display:flex;
+    height:100vh;
+}
+
+.about-flex-container {
+    display:flex;
+    flex-direction:row;
+    width:90%;
+    height:auto;
+    margin:0 auto;
+    justify-content:center;
+    background-color:white;
+    margin-top:200px;
+    margin-left:100px;
+    margin-right:200px;
+    
+}

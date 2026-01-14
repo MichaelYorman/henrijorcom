@@ -6,17 +6,19 @@ function Home() {
         <>
         <div>
         <main>
-        <div className="flex-wrapper">
-        <div className="flex-container">
-        <section className="grid-container">
+        <div className="home-flex-wrapper">
+        <div className="home-flex-container">
+        <section className="home-grid-container">
         <NavLink to="/about">
-        <div className="card-1"></div>
+        <div className="card card-1">
+        <img className="img1" src="images/cloud-moon-svgrepo-com.svg"/>
+        </div>
         </NavLink>
         <NavLink to="/resume">
-        <div className="card-2"></div>
+        <div className="card card-2"></div>
         </NavLink>
         <NavLink to="/portfolio">
-        <div className="card-3"></div>
+        <div className="card card-3"></div>
         </NavLink>
         </section>
         </div>
