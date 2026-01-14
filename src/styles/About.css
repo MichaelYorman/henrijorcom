@@ -1,18 +1,30 @@
 .about-flex-wrapper {
     display:flex;
-    height:100vh;
+    justify-content:center;
+    align-items:center;
+    height:fit-content;
 }
 
 .about-flex-container {
     display:flex;
-    flex-direction:row;
-    width:90%;
-    height:auto;
+    height:fit-content;
+    flex-direction:column;
+    align-items:center;
+    width:80%;
     margin:0 auto;
-    justify-content:center;
     background-color:white;
     margin-top:200px;
-    margin-left:100px;
-    margin-right:200px;
-    
+    gap:200px;
 }
+
+.info-box {
+    width:700px;
+    height:300px;
+    background-color: rgb(235, 235, 235);
+}
+
+.info-box-1 {transform: translate(300px)}
+.info-box-2 {transform: translate(500px)}
+.info-box-3 {transform: translate(300px)}
+.info-box-4 {transform: translate(500px)}
+.info-box-5 {transform: translate(300px)}
