@@ -11,14 +11,18 @@ function Home() {
         <section className="home-grid-container">
         <NavLink to="/about">
         <div className="card card-1">
-        <img className="img1" src="images/cloud-moon-svgrepo-com.svg"/>
+       <img className="home-image" img src="/icons/about/home.svg" alt="Cottage logo"></img>
         </div>
         </NavLink>
         <NavLink to="/resume">
-        <div className="card card-2"></div>
+        <div className="card card-2">
+        <img className="home-image" img src="/icons/resume.svg" alt="Cottage logo"></img> 
+        </div>
         </NavLink>
         <NavLink to="/portfolio">
-        <div className="card card-3"></div>
+        <div className="card card-3">
+        <img className="home-image" img src="/icons/folder.svg" alt="Cottage logo"></img>
+        </div>
         </NavLink>
         </section>
         </div>

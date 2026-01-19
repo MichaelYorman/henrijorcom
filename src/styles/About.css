@@ -1,8 +1,38 @@
 .about-flex-wrapper {
     display:flex;
     justify-content:center;
+    flex-direction:column;
     align-items:center;
     height:fit-content;
+}
+
+.about-nav-bar {
+    display:flex;
+    flex-direction:row;
+    width:fit-content;
+    height:100px;
+}
+
+.about-nav-item {
+    padding:5px;
+}
+.about-nav-item:hover {
+    background-color: gray;
+}
+.about-nav-item-1 {
+width:75px;
+height:75px;
+background-color: aliceblue;
+}
+.about-nav-item-2 {
+width:75px;
+height:75px;
+background-color:aqua;
+}
+.about-nav-item-3 {
+width:75px;
+height:75px;
+background-color:rebeccapurple;
 }
 
 .about-flex-container {
@@ -10,21 +40,58 @@
     height:fit-content;
     flex-direction:column;
     align-items:center;
-    width:80%;
+    width:90%;
     margin:0 auto;
     background-color:white;
     margin-top:200px;
     gap:200px;
+    box-shadow: inset 0 0 20px rgb(0, 0, 0);
+    border-radius:10px;
+}
+
+.info-box-container {
+display:flex;
+flex-direction:column;
+align-items:center;
+height:fit-content;
+gap:20px;
 }
 
 .info-box {
+    position:relative;
     width:700px;
     height:300px;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(255, 255, 255);
+    border:1px solid black;
+    box-shadow: inset 0 0 20px rgba(99, 99, 99, 0.65);
 }
 
-.info-box-1 {transform: translate(300px)}
-.info-box-2 {transform: translate(500px)}
-.info-box-3 {transform: translate(300px)}
-.info-box-4 {transform: translate(500px)}
-.info-box-5 {transform: translate(300px)}
+
+
+.info-box-header {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:300px;
+    height:100px;
+    background-color: whitesmoke;
+    font-family: "Trebuchet MS", "Tahoma", sans-serif;
+    font-size:22px;
+    box-shadow: inset 0 0 20px rgba(99, 99, 99, 0.65);
+    border:1px solid black;
+}
+
+.info-box-image {
+    display:flex;
+    position:absolute;
+    transform:translate(-50px,-50px);
+    width:100px;
+    height:100px;
+    z-index:1;
+}
+
+.info-box-container-1 {margin-top:100px;}
+.info-box-container-2 {transform: translate(100px)}
+.info-box-container-3 {transform: translate(-100px)}
+.info-box-container-4 {transform: translate(100px)}
+.info-box-container-5 {transform: translate(-100px);margin-bottom:100px;}
