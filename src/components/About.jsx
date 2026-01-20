@@ -1,26 +1,30 @@
 import { NavLink } from "react-router-dom";
+import '../styles/General.css';
 import '../styles/About.css';
 
 function About() {
     return (
         <>
         <div>
-        <div className="about-flex-wrapper">
-        <div className="about-nav-bar">
+        <div className="flex-wrapper">
+        <div className="nav-bar">
         <NavLink to="/">
-        <img className="about-nav-item about-nav-item-1" img src="/icons/home.svg" alt="Home cottage logo">
+        <img className="nav-item" img src="/icons/home.svg" alt="Home cottage logo">
         </img>
         </NavLink>
+        <NavLink to="/about">
+        <img className="nav-item" img src="/icons/user.svg" alt="User Logo"></img>
+        </NavLink>
         <NavLink to="/resume">
-        <img className="about-nav-item about-nav-item-1" img src="/icons/resume.svg" alt="Paper and pen logo"></img>
+        <img className="nav-item" img src="/icons/resume.svg" alt="Paper and pen logo"></img>
         </NavLink>
         <NavLink to="/portfolio">
-        <img className="about-nav-item about-nav-item-1" img src="/icons/folder.svg" alt="Folder logo"></img>
+        <img className="nav-item" img src="/icons/folder.svg" alt="Folder logo"></img>
         </NavLink>
         </div>
         <div className="about-flex-container">
         <div className='info-box-container info-box-container-1'>
-        <div className="info-box-header info-box-header-1">What I do?</div>
+        <div className="info-box-header info-box-header-1">Who I am?</div>
         <div className="info-box info-box-1">
         <img className="info-box-image info-box-image-1" img src="/icons/user.svg" alt="Gear logo"></img>
         </div>
@@ -32,7 +36,7 @@ function About() {
         </div>
         </div>
         <div className='info-box-container info-box-container-3'>
-        <div className="info-box-header info-box-header-3">What do I know?</div>
+        <div className="info-box-header info-box-header-3">What I know?</div>
         <div className="info-box info-box-3">
         <img className="info-box-image info-box-image-3" img src="/icons/book.svg" alt="Book logo"></img>
         <img className="info-box-skill-icon info-box-skill-icon-1" img src="icons/skills/css3.svg" alt="CSS3 logo"></img>
