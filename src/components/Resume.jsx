@@ -9,22 +9,22 @@ function Resume() {
         <div className="flex-wrapper">
         <div className="nav-bar">
         <NavLink to="/">
-        <img className="nav-item" img src="/icons/home.svg" alt="Home cottage logo">
+        <img className="nav-item" src="/icons/home.svg" alt="Home cottage logo">
         </img>
         </NavLink>
         <NavLink to="/about">
-        <img className="nav-item" img src="/icons/user.svg" alt="User Logo"></img>
+        <img className="nav-item" src="/icons/user.svg" alt="User Logo"></img>
         </NavLink>
         <NavLink to="/resume">
-        <img className="nav-item" img src="/icons/resume.svg" alt="Paper and pen logo"></img>
+        <img className="nav-item" src="/icons/resume.svg" alt="Paper and pen logo"></img>
         </NavLink>
         <NavLink to="/portfolio">
-        <img className="nav-item" img src="/icons/folder.svg" alt="Folder logo"></img>
+        <img className="nav-item" src="/icons/folder.svg" alt="Folder logo"></img>
         </NavLink>
         </div>
         <div className="resume-flex-container">
         <div className="profile-picture-frame">
-        <img className="profile-picture-container" img src="/icons/folder.svg" alt="My personal profile picture"></img>
+        <img className="profile-picture-container" src="/icons/folder.svg" alt="My personal profile picture"></img>
         </div>
         <div>
         <div className="resume-info-box-header resume-info-box-header-1">Name</div>

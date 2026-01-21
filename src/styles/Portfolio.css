@@ -1,0 +1,41 @@
+.portfolio-flex-container {
+    display:flex;
+    height:fit-content;
+    flex-direction:column;
+    align-items:center;
+    width:90%;
+    margin:0 auto;
+    background-color:white;
+    margin-top:200px;
+    gap:20px;
+    box-shadow: inset 0 0 20px rgb(0, 0, 0);
+    border-radius:10px;
+}
+
+.portfolio-filter-box {
+    display:flex;
+    gap:100px;
+    flex-direction:column;
+    height:fit-content;
+    flex-direction:column;
+    align-items:center;
+    margin-top:100px;
+    height:500px;
+    width:500px;
+    border:1px solid black;
+    box-shadow: inset 0 0 20px rgba(99, 99, 99, 0.65);
+    background-color:whitesmoke;
+}
+
+.portfolio-name-filter-input {
+    margin-top:200px;
+}
+
+
+.portfolio-project-list-box {
+
+}
+
+.portfolio-project-preview-box {
+
+}
