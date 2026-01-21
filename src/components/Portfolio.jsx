@@ -58,15 +58,17 @@ console.log(myFilters.projectName)
         </div>
         <div className="portfolio-flex-container">
         <div className="portfolio-filter-box">
+        <img className="portfolio-filter-box-image"src="/icons/filter.svg" alt="Filter logo"></img>
         <form>
+        <label name="year">Filter by name</label>
         <input className="portfolio-name-filter-input" type="text"
         name="projectName"
         value={myFilters.projectName}
         placeholder="Search project by name..."
         onChange={handleFilterChange}>
         </input>
-        <div>
         <label name="year">Filter by specific year</label>
+        <span>
         <input type="radio" name="YearTypeFilter" value="year"/>
         <input 
         type="number"
@@ -76,12 +78,10 @@ console.log(myFilters.projectName)
         max="2100"
         step="1"
         value={year}></input>
-        </div>
-        <div>
+        </span>
         <label name="year">Filter by timeline</label>
+        <span>
         <input type="radio" name="YearTypeFilter" value="timeline"/>
-        </div>
-        <div>
          <input 
         type="number"
         id="year"
@@ -91,7 +91,7 @@ console.log(myFilters.projectName)
         step="1"
         value={year}>
         </input>
-        <span>-</span>
+        <span> - </span>
         <input 
         type="number"
         id="year"
@@ -100,7 +100,20 @@ console.log(myFilters.projectName)
         max="2100"
         step="1"
         value={year}></input>
-        </div>
+        </span>
+        <label for="status">Status:</label>
+<select id="status" name="projectStatus">
+  <option value="">-- Select status --</option>
+  <option value="planned">Planned</option>
+  <option value="inProgress">In Progress</option>
+  <option value="completed">Completed</option>
+  <option value="onHold">On Hold</option>
+</select>
+        <span>
+        <button className="portfolio-setfilter-button">Filter</button>
+        <span></span>
+        <button className="portfolio-clearfilter-button">Clear all filters</button>
+        </span>
         </form>
         </div>
         </div>
