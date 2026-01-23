@@ -1,0 +1,25 @@
+.portfolio-preview-box {
+    display:flex;
+    flex-direction:column;
+    width:fit-content;
+    padding:20px;
+    border:1px solid black;
+    box-shadow: inset 0 0 20px rgba(99, 99, 99, 0.65);
+    background-color:whitesmoke;
+    grid-column:2;
+    grid-row: 1 / span 2;
+}
+
+.portfolio-preview-content {
+    display:flex;
+    border:1px solid black;
+    flex-direction:row;
+    align-items:center;
+    width:600px;
+    height:350px;
+    flex-wrap:wrap;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    gap:10px;
+
+}
