@@ -1,5 +1,8 @@
 .portfolio-preview-box {
     display:flex;
+    position:absolute;
+    justify-self:center;
+    height:800px;
     flex-direction:column;
     width:fit-content;
     padding:20px;
@@ -7,19 +10,32 @@
     box-shadow: inset 0 0 20px rgba(99, 99, 99, 0.65);
     background-color:whitesmoke;
     grid-column:2;
-    grid-row: 1 / span 2;
+    grid-row: 1 / span 3;
 }
 
 .portfolio-preview-content {
     display:flex;
+    flex-direction:column;
     border:1px solid black;
-    flex-direction:row;
     align-items:center;
     width:600px;
-    height:350px;
+    height:100%;
     flex-wrap:wrap;
     overflow-y: scroll;
     overflow-x: hidden;
-    gap:10px;
+    gap:20px;
+}
+
+.portfolio-preview-image {
+    height:256px;
+    width:100%;
+    background-color: rgb(197, 197, 197);
+}
+
+.portfolio-preview-header {
+    text-decoration:underline;
+}
+
+.portfolio-preview-text {
 
 }
