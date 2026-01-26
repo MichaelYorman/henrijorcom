@@ -6,8 +6,6 @@ import List from "./List"
 import Preview from "./Preview";
 
 function Portfolio() {
-    // UseState for Filter GET request
-
     return (
         <>
         <div>

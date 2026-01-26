@@ -23,7 +23,9 @@
     gap:10px;
 }
 
-.test {
+.portfolio-list-item {
+    display:flex;
+    align-items:center;
     width:500px;
     margin:20px;
     height:100px;

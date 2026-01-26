@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom";
+import {useEffect,useState} from "react";
+import axios from "axios";
 import '../styles//General/General.css';
 import '../styles/Home.css';
 
 function Home() {
+
     return (
         <>
         <div>

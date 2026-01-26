@@ -34,7 +34,6 @@ function Filter() {
         setTimeLineFilterState(true)
     }
   };
-
     return (
         <>
         <div>
