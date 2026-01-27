@@ -24,7 +24,7 @@ connection.connect(err=> {
         console.error("Error connection to MySQL:",err)
         process.exit(1);
     }
-    console.log("Connectted to MySQL");
+    console.log("Connected to MySQL");
 });
 app.use("/api/",listsRoute(connection));
 const PORT=process.env.PORT || 3000;

@@ -81,7 +81,7 @@ function Filter() {
         step="1"
         value={year}></input>
         </span>
-        <label for="status">Status:</label>
+        <label>Status:</label>
 <select id="status" name="projectStatus">
   <option value="">-- Select status --</option>
   <option value="planned">Planned</option>

@@ -1,11 +1,38 @@
 import { NavLink } from "react-router-dom";
 import '../../styles/General/General.css';
 import '../../styles/Portfolio/Portfolio.css';
+import { useState,useEffect } from "react";
+import axios from "axios";
 import Filter from "./Filter";
 import List from "./List"
 import Preview from "./Preview";
 
 function Portfolio() {
+
+const [portfolioData,setPortfolioData]=useState([]);
+const [currentSelectedItem,setCurrentSelectedItem]=useState(null);
+const [loadError, setLoadError] = useState(false);
+const selectedItemData=portfolioData.find((item)=>item.id===currentSelectedItem);
+
+// Fetch portfolio data
+  useEffect(() => {
+    const controller= new AbortController(); //
+    const fetchData=async()=>{
+      try {
+        const response=await axios.get("http://localhost:3000/api/list",{
+        signal:controller.signal
+      });
+        setPortfolioData(response.data.data);
+      } catch (err) {
+        if(err.name!=="CanceledError") {
+        console.error("Error fetching data:",err);
+        }
+      }
+    };
+    fetchData();
+    return () => controller.abort();
+  },[]);
+console.log(currentSelectedItem)
     return (
         <>
         <div>
@@ -28,8 +55,16 @@ function Portfolio() {
         <div className="portfolio-flex-container">
         <div className="portfolio-grid-container">
         <Filter/>
-        <Preview/>
-        <List/>
+        <Preview
+        id={currentSelectedItem}
+        data={selectedItemData}
+        error={loadError}
+        />
+        <List currentSelectedItem={currentSelectedItem}
+        setCurrentSelectedItem={setCurrentSelectedItem}
+        items={portfolioData}
+        />
+
         </div>
         </div>
         </div>

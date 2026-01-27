@@ -6,8 +6,7 @@ const router=express.Router();
 
 router.get("/list", (req, res) => {
         const query = `
-        SELECT * FROM henrijorcom
-        `;
+        SELECT * FROM portfolio`;
     connection.query(query,(err,result) => {
     if (err) {
         console.error("DB fetch error:",err);

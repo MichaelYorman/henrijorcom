@@ -30,4 +30,9 @@
     margin:20px;
     height:100px;
     border:1px solid black;
+    cursor:pointer;
+}
+
+.portfolio-list-item:hover{
+    border-color:red;
 }
