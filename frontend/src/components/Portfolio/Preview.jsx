@@ -21,18 +21,31 @@ function Preview({id,data,error}) {
             <label>Portfolio Preview</label>
             <div className="portfolio-preview-content">
             <div className="portfolio-preview-image"></div>
-            <div className="portfolio-preview-header">Project name</div>
+            <div className="portfolio-preview-item">
+            <h2 className="portfolio-preview-header">Project name</h2>
             <div className="portfolio-preview-text">{data.name}</div>
-            <div className="portfolio-preview-header">Role</div>
+            </div>
+            <div className="portfolio-preview-item">
+            <h2 className="portfolio-preview-header">Role</h2>
             <div className="portfolio-preview-text">{data.role}</div>
-            <div className="portfolio-preview-header">Field</div>
+            </div>
+            <div className="portfolio-preview-item">
+            <h2 className="portfolio-preview-header">Field</h2>
             <div className="portfolio-preview-text">{data.field}</div>
-            <div className="portfolio-preview-header">Description</div>
+            </div>
+            <div className="portfolio-preview-item">
+            <h2 className="portfolio-preview-header">Description</h2>
             <div className="portfolio-preview-text">{data.description}</div>
-            <div className="portfolio-preview-header">Status</div>
+            </div>
+            <div className="portfolio-preview-item">
+            <h2 className="portfolio-preview-header">Status</h2>
             <div className="portfolio-preview-text">{data.status}</div>
-            <div className="portfolio-preview-header">Time</div>
-            <div className="portfolio-preview-text">{data.time}</div>
+            </div>
+            <div className="portfolio-preview-item">
+            <h2 className="portfolio-preview-header">Time</h2>
+            <div className="portfolio-preview-text">{data.timeline.start_year}</div>
+            <div className="portfolio-preview-text">{data.timeline.end_year}</div>
+            </div>
             </div>
             </div>
         </div>

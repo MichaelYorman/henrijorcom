@@ -9,14 +9,19 @@ function Filter() {
     const [myFilters,setMyFilters]=useState({
         projectName:"",
         projectSingleYear:"",
-        projectTimeLine:"",
+        projectTimeLineStartDate:"",
+        projectTimeLineEndDate:"",
         projectStatus:""
     })
 
-    const [yearFilterState,setYearFilterState]=useState(false);
-    const [timeLineFilterState,setTimeLineFilterState]=useState(false);
+    const [projectSingleYear,setProjectSingleYear]=useState(year);
+    const [projectTimeLineStartDate,setProjectTimeLineStartYear]=useState(year);
+    const [projectTimeLineEndDate,setProjectTimeLineEndYear]=useState(year);
+    const [singleYearFilterIsUsed,setSingleYearFilterIsUsed]=useState();
+    const [timelineFilterIsUsed,setTimelineFilterIsUsed]=useState();
+    //huom! year filterit pitää olla portinvartijoina jos muokkaa lukuja mutta ei ole palleroa klikannut
 
-  const handleFilterChange = (e) => {
+      const handleNameChange = (e) => {
     const { name, value } = e.target;
     setMyFilters({
       ...myFilters,
@@ -24,44 +29,101 @@ function Filter() {
     });
   };
 
-  const handleYearSelection=(e)=> {
+  const changeSingleYear=(e)=>{
     const {name,value}=e.target;
+    if(singleYearFilterIsUsed) {
+    setProjectSingleYear(value);
+    setMyFilters({
+      ...myFilters,
+    [name]:value
+      })
+    }
+  }
+
+    const changeTimeLineStartYear=(e)=>{
+    if(timelineFilterIsUsed) {
+    const newValue=e.target.value;
+    setProjectTimeLineStartYear(newValue)
+    }
+  }
+    const changeTimeLineEndYear=(e)=>{
+    if(timelineFilterIsUsed) {
+      const newValue=e.target.value;
+      setMyFilters({
+        ...myFilters,
+        projectTImeLineEndDate:newValue
+      })
+  }
+}
+
+    const changeStatus=(e)=>{
+      const {value}=e.target;
+      const status="projectStatus"
+      setMyFilters({
+        ...myFilters,
+        [status]:value
+      })
+    }
+
+    const handleTimeFilterChange=(e)=> {
+    const {value}=e.target;
+    const singleYear="projectSingleYear"
+    const startDate="projectTimeLineStartDate";
+    const endDate="projectTimeLineEndDate";
     if(value==="year") {
-        setYearFilterState(true)
-        setTimeLineFilterState(false)
+      setSingleYearFilterIsUsed(true);
+      setTimelineFilterIsUsed(false);
+        setMyFilters({
+      ...myFilters,
+      [singleYear]: projectSingleYear,
+      [startDate]:"",
+      [endDate]:""
+    });
     } else if (value==="timeline") {
-        setYearFilterState(false)
-        setTimeLineFilterState(true)
+      setSingleYearFilterIsUsed(false);
+      setTimelineFilterIsUsed(true);
+              setMyFilters({
+      ...myFilters,
+      ProjectSingleYear:"",
+      ProjectTimeLineStartDate:projectTimeLineStartDate,
+      ProjectTimeLineEndDate:projectTimeLineEndDate
+    });
+      
     }
   };
+
+  console.log("MyFilter",myFilters)
     return (
         <>
         <div>
          <div className="portfolio-filter-box">
         <img className="portfolio-filter-box-image"src="/icons/filter.svg" alt="Filter logo"></img>
         <form>
-        <label name="year">Filter by name</label>
+        <label>Filter by name</label>
         <input className="portfolio-name-filter-input" type="text"
         name="projectName"
         value={myFilters.projectName}
         placeholder="Search project by name..."
-        onChange={handleFilterChange}>
+        onChange={handleNameChange}>
         </input>
         <label name="year">Filter by specific year</label>
         <span>
-        <input type="radio" name="YearTypeFilter" value="year"/>
+        <input type="radio" name="YearTypeFilter" value="year" onClick={handleTimeFilterChange}/>
         <input 
         type="number"
         id="year"
-        name="year"
+        name="projectSingleYear"
         min="2025"
         max="2100"
         step="1"
-        value={year}></input>
+        disabled={timelineFilterIsUsed}
+        value={projectSingleYear}
+        onChange={changeSingleYear}
+        ></input>
         </span>
-        <label name="year">Filter by timeline</label>
+        <label>Filter by timeline</label>
         <span>
-        <input type="radio" name="YearTypeFilter" value="timeline"/>
+        <input type="radio" name="YearTypeFilter" value="timeline" onClick={handleTimeFilterChange}/>
          <input 
         type="number"
         id="year"
@@ -69,25 +131,31 @@ function Filter() {
         min="2025"
         max="2100"
         step="1"
-        value={year}>
+        disabled={singleYearFilterIsUsed}
+        value={projectTimeLineStartDate}
+        onChange={changeTimeLineStartYear}
+        >
         </input>
         <span> - </span>
         <input 
         type="number"
         id="year"
-        name="year"
         min="2025"
         max="2100"
+        name="year"
         step="1"
-        value={year}></input>
+        disabled={singleYearFilterIsUsed}
+        value={projectTimeLineEndDate}
+        onChange={changeTimeLineEndYear}
+        ></input>
         </span>
         <label>Status:</label>
-<select id="status" name="projectStatus">
+<select id="status" name="projectStatus" onChange={changeStatus}>
   <option value="">-- Select status --</option>
-  <option value="planned">Planned</option>
-  <option value="inProgress">In Progress</option>
-  <option value="completed">Completed</option>
-  <option value="onHold">On Hold</option>
+  <option value="Planned">Planned</option>
+  <option value="in Progress">In Progress</option>
+  <option value="Paused">Paused</option>
+  <option value="Completed">Completed</option>
 </select>
         <span>
         <button className="portfolio-setfilter-button">Filter</button>

@@ -13,11 +13,10 @@
 .portfolio-list-content {
     display:flex;
     border:1px solid black;
-    flex-direction:row;
+    flex-direction:column;
     align-items:center;
     width:600px;
     height:350px;
-    flex-wrap:wrap;
     overflow-y: scroll;
     overflow-x: hidden;
     gap:10px;
